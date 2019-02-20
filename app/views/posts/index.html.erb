@@ -1,1 +1,20 @@
 <!-- View for showing all `Post` -->
+<!-- Search bar -->
+
+<%= form_tag(posts_path method: :get) do %>
+<%= text_field_tag :title, params[:title] %>
+<%= submit_tag 'Search' %>
+<% end %>
+
+
+<!-- List of  Posts -->
+<h1> List of Posts </h1>
+<h3><%= link_to 'New Post', new_post_path %></h3>
+<% @post.each do |post| %>
+<h1><%= post.title %></h1>
+<h2><%= post.body %></h2>
+<h4>
+<%= link_to 'Show', post_path(post) %><br>
+Comments<%= link_to post.comments.count, post_path(post) %>
+<h4>
+<% end %>
