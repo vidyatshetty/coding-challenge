@@ -3,9 +3,9 @@
 <html>
 <body style="background-color: gray; text-align: center">
 <div style="text-align: center">
-<%= form_tag(posts_path method: :get) do %>
+<%= form_tag(posts_path, method: :get) do %>
 <%= text_field_tag :title, params[:title] %>
-<%= submit_tag 'Search' %>
+<%= submit_tag 'Search', :title => nil %>
 <% end %>
 
 
