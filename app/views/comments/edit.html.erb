@@ -1,10 +1,14 @@
+<html>
+<body style="background-color: gray; text-align: center">
 <h1>Comments</h1>
 <%= form_with(model: [ @post, @comment ], local:true) do |form| %>
 <p>
 	<%= form.label :body %><br>
-	<%= form.text_area :body %>
+	<%= form.text_area :body, size: "60x10" %>
 </p>
 <p>
 	<%= form.submit %>
 </p>
 <% end %>
+</body>
+</html>

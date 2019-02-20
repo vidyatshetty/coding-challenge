@@ -1,4 +1,6 @@
 <!-- View for showing a single `Post` -->
+<html>
+<body style="background-color: gray; text-align: center">
 <h1>
 	Title:
 	<%= @post.title %>
@@ -9,7 +11,7 @@
 	<%= @post.body %>
 </h2>
 
-<table>
+<table style = "display: inline-block">
 <th><%= link_to 'Edit', edit_post_path(@post) %></th>
 <th><%= link_to 'Delete', post_path(@post), method: :delete %></th>
 </table>
@@ -19,7 +21,7 @@
 <%= form_with(model: [ @post, @post.comments.build ], local:true) do |form| %>
 <p>
 	<%= form.label :body %><br>
-	<%= form.text_area :body %>
+	<%= form.text_area :body, size: "60x10" %>
 </p>
 <p>
 	<%= form.submit %>
@@ -30,11 +32,12 @@
 <% @post.comments.each do|comment| %>
 <p>
 	<h3><%= comment.body %></h3>
-	<table>
+	<table style = "display: inline-block">
 	<th><%= link_to 'Edit', [comment.post, comment] %></th>
 	<th><%= link_to 'Delete', [comment.post, comment], method: :delete %></th>
 </table>
 </p>
 
 <% end %>
-
+</body>
+</html>

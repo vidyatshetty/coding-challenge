@@ -1,14 +1,18 @@
+<html>
+<body style="background-color: gray; text-align: center">
 <h1> Edit Post</h1>
 <%= form_with(model: @post, local: true) do |form| %>
 	<p>
 		<%= form.label :title %><br>
-		<%= form.text_field :title %>
+		<%= form.text_field :title, size: "60x10" %>
 	</p>
 	<p>
 		<%= form.label :body %><br>
-		<%= form.text_area :body %>
+		<%= form.text_area :body, size: "60x10" %>
 	</p>
 	<p>
 		<%= form.submit %>
 	</p>
 	<% end %>
+</body>
+</html>

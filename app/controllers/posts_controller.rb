@@ -45,7 +45,6 @@ class PostsController < ApplicationController
     # Remove a `Post` from the database
     @post = Post.find(params[:id])
     @post.destroy
-    flash[:notice] = "Post deleted"
     redirect_to posts_path
   end
 
